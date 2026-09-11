@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <form id="registration-form" action="/registration" method="post">
+        <div class="field">
+            <label class="field__label" for="name">Ім'я:</label>
+            <input 
+                class="field__input" 
+                type="text" id="name" 
+                name="name"
+                autocomplete="given-name"
+                required
+            />
+        </div>
+        <div class="field">
+            <label class="field__label" for="surname">Прізвище:</label>
+            <input 
+                class="field__input" 
+                type="text" 
+                id="surname" 
+                name="surname"
+                autocomplete="family-name"
+                required
+            />
+        </div>
+        <div class="field">
+            <label class="field__label" for="login">Логін:</label>
+            <input 
+                class="field__input" 
+                type="text" 
+                id="login" 
+                name="login"
+                autocomplete="username"
+                required
+            />
+        </div>
+        <div class="field">
+            <label class="field__label" for="password">Пароль:</label>
+            <input 
+                class="field__input" 
+                type="password" 
+                id="password" 
+                name="password"
+                required
+            />
+        </div>
+        <div class="field">
+            <label class="field__label" for="password-confirmation">Підтвердження паролю:</label>
+            <input 
+                class="field__input" 
+                type="password" 
+                id="password-confirmation" 
+                name="password-confirmation"
+                required
+            />
+        </div>
+        <div class="field">
+            <label class="field__label" for="email">Електронна пошта:</label>
+            <input 
+                class="field__input" 
+                type="email" 
+                id="email" 
+                name="email"
+                autocomplete="email"
+                required
+            />
+        </div>
+        <fieldset class="gender-radios">
+            <legend class="gender-radios__legend">Стать:</legend>
+            <div class="gender-radios__group">
+                <input 
+                    class="gender-radios__radio" 
+                    type="radio" 
+                    id="male" 
+                    name="gender"
+                    value="Чоловіча"
+                    required
+                />
+                <label class="gender-radios__label" for="male">Чоловіча</label>
+            </div>
+            <div class="gender-radios__group">
+                <input 
+                    class="gender-radios__radio" 
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="Жіноча"
+                    required
+                />
+                <label class="gender-radios__label" for="female">Жіноча</label>
+            </div>
+        </fieldset>
+        <button class="registration-form__submit" type="submit">Відправити</button>
+    </form>
+    <script src="./main.js" defer></script>
+</body>
+</html>
