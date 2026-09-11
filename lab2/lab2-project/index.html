@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <form id="registration-form" action="/registration" method="post">
+    <form id="registration-form" method="post">
         <div class="field">
             <label class="field__label" for="name">Ім'я:</label>
             <input 
@@ -15,7 +15,6 @@
                 type="text" id="name" 
                 name="name"
                 autocomplete="given-name"
-                required
             />
         </div>
         <div class="field">
@@ -26,7 +25,6 @@
                 id="surname" 
                 name="surname"
                 autocomplete="family-name"
-                required
             />
         </div>
         <div class="field">
@@ -37,7 +35,6 @@
                 id="login" 
                 name="login"
                 autocomplete="username"
-                required
             />
         </div>
         <div class="field">
@@ -47,7 +44,6 @@
                 type="password" 
                 id="password" 
                 name="password"
-                required
             />
         </div>
         <div class="field">
@@ -57,7 +53,6 @@
                 type="password" 
                 id="password-confirmation" 
                 name="password-confirmation"
-                required
             />
         </div>
         <div class="field">
@@ -68,7 +63,6 @@
                 id="email" 
                 name="email"
                 autocomplete="email"
-                required
             />
         </div>
         <fieldset class="gender-radios">
@@ -80,7 +74,6 @@
                     id="male" 
                     name="gender"
                     value="Чоловіча"
-                    required
                 />
                 <label class="gender-radios__label" for="male">Чоловіча</label>
             </div>
@@ -91,7 +84,6 @@
                     id="female"
                     name="gender"
                     value="Жіноча"
-                    required
                 />
                 <label class="gender-radios__label" for="female">Жіноча</label>
             </div>
