@@ -1,0 +1,67 @@
+:root {
+    --accent-color: rgb(8, 93, 8);
+    --accent-border: 2px solid var(--accent-color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--accent-color);
+    font-size: 17px;
+}
+
+#registration-form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
+    background-color: aquamarine;
+    color: var(--accent-color);
+    font-weight: 700;
+    padding: 35px;
+    border: var(--accent-border);
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field__input {
+    border: var(--accent-border);
+    border-radius: 5px;
+    padding: 7px 10px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.gender-radios {
+    display: flex;
+    gap: 25px;
+    border: var(--accent-border);
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+
+.gender-radios__label {
+    font-size: 0.85em;
+}
+
+.registration-form__submit {
+    border: var(--accent-border);
+    border-radius: 5px;
+    padding: 7px 10px;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.25em;
+    cursor: pointer;
+}
