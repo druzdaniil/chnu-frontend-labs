@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: darkkhaki;
+    min-height: 65vh;
+    border-radius: 10px;
+    border: 3px rgb(78, 78, 78) solid;
+}
+
+.main__canvas {
+    display: flex;
+    border-radius: 10px 0 0 10px;
+}
+
+#canvas {
+    background-color: darkcyan;
+    border-right: 2px rgb(78, 78, 78) solid;
+}
+
+.main__controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding-inline: 50px;
+    padding-block: 30px;
+}
+
+.build-btns {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+    flex: 1;
+}
+
+.build-btns__item {
+    padding-block: 30px;
+
+    &:hover {
+        background: rgb(114, 190, 13);
+    }
+}
+
+.clear-btn {
+    padding-block: 25px;
+    background: rgb(253, 220, 110);
+
+    &:hover {
+        background: rgb(221, 80, 62);
+        color: aliceblue;
+    }
+}
+
+.build-btns__item, 
+.clear-btn  {
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    padding-inline: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.build-btns__item:focus-visible, 
+.clear-btn:focus-visible  {
+    outline: 3px solid rgb(78, 78, 78);
+}
