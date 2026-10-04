@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const [forLoopBtn, whileBtn, doWhileBtn] = document.querySelectorAll('.build-btns__item');
 const clearBtn = document.querySelector('.clear-btn');
+const tableBody = document.getElementById('valuesTableBody');
 
 const ctx = canvas.getContext('2d');
 
@@ -34,23 +35,37 @@ function screenYCalc(y) {
     return centerY - (y * scale);
 }
 
-function setGraphStart() {
-    ctx.beginPath();
-        
-    const START_X = -1;
-    const END_X = 1;
-    const STEP = 0.1;
-    const startY = getFucntionValue(START_X);
+function getUserInputs() {
+    const intervalStart = Number(prompt('Введіть початок інтервалу: ', '-1'));
+    const intervalEnd = Number(prompt('Введіть кінець інтервалу: ', '1'));
+    const step = Number(prompt('Введіть крок:', '0.1'));
 
-    const screenX = screenXCalc(START_X);
+    return [intervalStart, intervalEnd, step];
+}
+
+function addTableRow(x, y) {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${x.toFixed(2)}</td><td>${y.toFixed(4)}</td>`;
+    tableBody.appendChild(row);
+}
+
+function setGraphStart(startX, endX, step) {
+    ctx.beginPath();
+
+    tableBody.innerHTML = '';
+        
+    const startY = getFucntionValue(startX);
+
+    const screenX = screenXCalc(startX);
     const screenY = screenYCalc(startY);
     ctx.moveTo(screenX, screenY);
 
-    return [START_X, END_X, STEP];
+    return [startX, endX, step];
 }
 
 forLoopBtn.addEventListener('click', () => {
-    const [start, end, step] = setGraphStart();
+    const [userStart, userEnd, userStep] = getUserInputs();
+    const [start, end, step] = setGraphStart(userStart, userEnd, userStep);
     ctx.strokeStyle = 'white';
     
     for (let x = start + step; x <= end + 0.01; x += step) {
@@ -59,13 +74,16 @@ forLoopBtn.addEventListener('click', () => {
         const screenX = screenXCalc(x);
         const screenY = screenYCalc(currentY);
         ctx.lineTo(screenX, screenY);
+
+        addTableRow(x, currentY);
     }
     
     ctx.stroke();
 })
 
 whileBtn.addEventListener('click', () => {
-    const [start, end, step] = setGraphStart();
+    const [userStart, userEnd, userStep] = getUserInputs();
+    const [start, end, step] = setGraphStart(userStart, userEnd, userStep);
     ctx.strokeStyle = 'rgb(171, 235, 247)';
 
     let x = start + step;
@@ -77,6 +95,8 @@ whileBtn.addEventListener('click', () => {
         const screenY = screenYCalc(currentY);
         ctx.lineTo(screenX, screenY);
 
+        addTableRow(x, currentY);
+
         x += step;
     }
 
@@ -84,7 +104,8 @@ whileBtn.addEventListener('click', () => {
 })
 
 doWhileBtn.addEventListener('click', () => {
-    const [start, end, step] = setGraphStart();
+    const [userStart, userEnd, userStep] = getUserInputs();
+    const [start, end, step] = setGraphStart(userStart, userEnd, userStep);
     ctx.strokeStyle = 'rgb(247, 242, 171)';
 
     let x = start + step;
@@ -96,6 +117,8 @@ doWhileBtn.addEventListener('click', () => {
         const screenY = screenYCalc(currentY);
         ctx.lineTo(screenX, screenY);
 
+        addTableRow(x, currentY);
+
         x += step;
     } while (x <= end + 0.01);
 
@@ -105,6 +128,7 @@ doWhileBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawAxes();
+    tableBody.innerHTML = '';
 })
 
 drawAxes();

@@ -77,3 +77,23 @@ body {
 .clear-btn:focus-visible  {
     outline: 3px solid rgb(78, 78, 78);
 }
+
+.main__table {
+    max-height: 65vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: darkkhaki;
+    border-radius: 0 10px 10px 0;
+}
+
+#valuesTable {
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#valuesTable th,
+#valuesTable td {
+    border: 1px solid rgb(78, 78, 78);
+    padding: 4px 10px;
+    text-align: center;
+}
