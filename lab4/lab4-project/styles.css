@@ -59,7 +59,17 @@ body {
     font-weight: 600;
 }
 
-.current-time {
-    align-self: end;
+.current-time__label, .current-date__label {
+    font-weight: 600;
+}
+
+.current-time__value, .current-date__value {
+    font-variant-numeric: tabular-nums;
+}
+
+.current-info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     font-size: 1.35rem;
 }
