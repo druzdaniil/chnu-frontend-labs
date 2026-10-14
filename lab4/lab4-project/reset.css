@@ -7,9 +7,9 @@
 }
 
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 body {
@@ -19,17 +19,17 @@ body {
 }
 
 ul[class], ol[class] {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
 input, button, textarea, select {
-  font: inherit;
+    font: inherit;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -45,9 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, button, input, label {
-  line-height: 1.1;
+    line-height: 1.1;
 }
 
-button:not(:disabled), [role="button"]:not(:disabled) {
+button:not(:disabled), [role="button"]:not(dis) {
     cursor: pointer;
 }
