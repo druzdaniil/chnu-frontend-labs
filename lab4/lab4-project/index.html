@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1 class="title">До кінця року залишилося...</h1>
+    <main class="main">
+        <section class="countdown" aria-label="Зворотній відлік до кінця року">
+            <ul class="countdown__cards-list">
+                <li class="countdown-card">
+                    <span class="countdown-card__value countdown-card__value--days"></span>
+                    <small class="countdown-card__label">днів</small>
+                </li>
+                <li class="countdown-card">
+                    <span class="countdown-card__value countdown-card__value--hours"></span>
+                    <small class="countdown-card__label">годин</small>
+                </li>
+                <li class="countdown-card">
+                    <span class="countdown-card__value countdown-card__value--minutes"></span>
+                    <small class="countdown-card__label">хвилин</small>
+                </li>
+                <li class="countdown-card">
+                    <span class="countdown-card__value countdown-card__value--seconds"></span>
+                    <small class="countdown-card__label">секунд</small>
+                </li>
+            </ul>
+        </section>
+        <section class="current-time">
+            <span class="current-time__label">Поточний час: </span>
+            <time class="current-time__value" datetime=""></time>
+        </section>
+    </main>
+    <script src="./main.js" defer></script>
+</body>
+</html>
